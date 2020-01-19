@@ -9,22 +9,60 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+
 	<link rel="stylesheet" href="{{url_for('static' , filename='css/main.css') }}">
+
+
 	<title>Hello, world!</title>
 
 	<style>
 
+    body{
+        font-family: 'ZCOOL QingKe HuangYou', cursive;
+    }
+
+
+
  /* nav code  */
 
 #blackbulls-nav {
-  position: absolute;
-  padding-bottom:50px;
-  border-bottom: 1px solid #e9ecef;
+  padding-bottom:20px;
   background-color: white;
-  font-family: ;
+ 
+}
+
+ #blackbulls-nav .navbar-brand {
+  font-weight: 950;
+  color: #000;
+}
+
+ #blackbulls-nav .navbar-toggler  {
+  font-size: 12px;
+  font-weight: 800;
+  padding: 13px ;
+  text-transform: uppercase;
+  color: #000;
+}
+
+#blackbulls-nav .navbar-toggler, .navbar-brand {
+    margin-top:30px;
+    margin-bottom:0;
 }
 
 
+ #blackbulls-nav .navbar-nav > li.nav-item > a {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#blackbulls-nav .navbar-nav > li.nav-item :hover {
+    background:#000;
+    color:#fff;
+    width:100%;
+}
 
     /* Header code  */
 		.black-bulls-main-title-heading {
@@ -35,6 +73,7 @@
 
 		.black-bulls-main-title-heading h1,
 		.subheading {
+            font-size:54px;
 			text-align: center;
 
 		}
@@ -45,6 +84,7 @@
 			line-height: 1.1;
 			display: block;
 			margin: 10px 0 0;
+            
 		}
 
 
@@ -72,7 +112,7 @@
 
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="blackbulls-nav">
-		<div class="container">
+		<div class="container-fluid">
 			<a class="navbar-brand" href="/static/index.html">The Black bulls</a>
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
