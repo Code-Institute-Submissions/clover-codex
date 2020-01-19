@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+<h1>character</h1>
+{% for character in characters  %}
+
+{{character.Name}}
+{{character.Age}}
+{{character.Gender}}
+{{character.Affinity}}
+{{character.Status}}
+{{character.House}}
+{{character.Birthday}}
+
+
+{% endfor %}
+<div class="container recipe-container">
+ 
+</div>
+
+{% endblock %}
+  
