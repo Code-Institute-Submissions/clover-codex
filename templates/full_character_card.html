@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 
-{% extends 'base.html'%} 
+{% extends 'base.html'%}
 
 {% block content %}
-<h2>teest </h2>
+<h2> Full character card </h2>
+
+<a href="{{url_for('characters_page')}}" class="waves-effect waves-light btn btn_small">Back to characters </a>
 
 {% for character in characters %}
 <div class="row">
-<div class="col-4">
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{character.character_name}}</h5>
-     <h6>{{character.affinity_name}}</h6>
-    <h6 class="card-subtitle mb-2 text-muted">{{character.character_description}}</h6>
-     <h6 class="card-subtitle mb-2 text-muted">{{character.character_age}}</h6>
- <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  <h2>This is full character card!!!</h2> 
-
-  
-  </div>
-</div>
-</div>
- {% endfor %}
-{% endblock %}
+	<div class="col-4">
+		<div class="card" style="width: 18rem;">
+			<div class="card-body">
+				<h5 class="card-title">{{character.character_name}}</h5>
+				<h6>{{character.affinity_name}}</h6>
+				<h6 class="card-subtitle mb-2 text-muted">{{character.character_description}}</h6>
+				<h6 class="card-subtitle mb-2 text-muted">{{character.character_age}}</h6>
+				<div class="row">
+                <div class="col s6">
+					<a href=""
+						class="waves-effect waves-light btn btn_small">Done</a>
+                        </div>
+                <div class="col s6">
+					<a href="" class="waves-effect waves-light btn btn_small blue">Edit</a>
+				</div>
+                </div>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+	{% endblock %}
