@@ -1,20 +1,23 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% block content %} <div class="container">
+	<div class="row">
+		<div class="col-12-">
+			<li><a href="{{url_for('add_characters')}}">Add Character</a></li>
+		</div>
+	</div>
+</div>
 <h1>characters</h1>
-{% for character in characters  %}
-
-{{character.Name}}
-{{character.Age}}
-{{character.Gender}}
-{{character.Affinity}}
-{{character.Status}}
-{{character.House}}
-{{character.Birthday}}
 
 
-{% endfor %}
 <div class="container recipe-container">
- 
+    {% include 'character_card.html' %}
 </div>
 
+
+
+
+
+
+
+
+
 {% endblock %}
-  
