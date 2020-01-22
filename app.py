@@ -40,7 +40,14 @@ def full_character_page(character_id):
 def insert_character():
     characters = mongo.db.characters
     characters.insert_one(request.form.to_dict())
-    return redirect(url_for('characters_page'))
+    return redirect(url_for('characters_page')) 
+
+@app.route('/edit_character_card/<character_id>')
+def edit_character(character_id):
+    the_character = mongo.db.characters.find_one({"_id": ObjectId(character_id)})
+    the_affinity = mongo.db.affinity.find()
+    return render_template('edit_character.html', character=the_character,
+                           affinity=the_affinity)
 
 
 if __name__ == "__main__":
