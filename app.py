@@ -49,6 +49,24 @@ def edit_character(character_id):
     return render_template('edit_character.html', character=the_character,
                            affinity=the_affinity)
 
+@app.route('/update_character/<character_id>', methods=["POST"])
+def update_character(character_id):
+    characters = mongo.db.characters
+    characters.update({'_id': ObjectId(character_id)},
+                 {
+        'character_name': request.form.get('character_name'),
+        'affinity_name': request.form.get('affinity_name'),
+        'character_description': request.form.get('character_description'),
+       
+    })
+    return redirect(url_for('characters_page')) 
+
+@app.route('/delete_characters/<character_id>')
+def delete_character(character_id):
+    mongo.db.characters.remove({'_id': ObjectId(character_id)})
+    return redirect(url_for('characters_page'))
+
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP'),

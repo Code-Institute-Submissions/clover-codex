@@ -1,31 +1,35 @@
 {% extends 'base.html' %} {% block content %}
 <h3>Edit Character</h3>
 
-<form action="{{url_for('insert_character')}}" method="POST" class="col s12">
+<form action="{{url_for('update_character', character_id=character._id )}}" method="POST" class="col s12">
 	<div class="row">
-    <div class="input-field col s12">
-				<i class="material-icons prefix">assignment</i>
-				<input id="character_name" name="character_name" type="text">
-				<label for="icon_prefix"> Character Name</label>
-			</div>
-    </div>
-		<div class="row">
-			<div class="input-field col s12">
-				<i class="material-icons prefix">poll</i>
-				<select id="affinity" name="affinity_name">
+		<div class="input-field col s12">
+			<i class="material-icons prefix">assignment</i>
+			<input id="character_name" name="character_name" type="text" value ="{{character.character_name}}">
+			<label for="icon_prefix"> Character Name</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="input-field col s12">
+			<i class="material-icons prefix">poll</i>
+			<select id="affinity" name="affinity_name">
                   <option value="" disabled selected>Select Affinity</option>
                   {% for affinity in affinity %}
-                      <option value="{{affinity.affinity_name}}">{{affinity.affinity_name}}</option>
+                    {% if affinity.affinity_name == character.affinity_name %}
+                      <option value="{{affinity.affinity_name}}" selected>{{affinity.affinity_name}}</option>
+                 {% else %}
+ <option value="{{affinity.affinity_name}}" >{{affinity.affinity_name}}</option>
+                 {% endif %}
                   {% endfor %}
                 </select>
-				<label> Affinity</label>
-			</div>
+			<label> Affinity</label>
 		</div>
+	</div>
 
 	<div class="row">
 		<div class="input-field col s12">
 			<i class="material-icons prefix">subject</i>
-			<textarea name="character_description" id="character_description" class="materialize-textarea"></textarea>
+			<textarea name="character_description" id="character_description" class="materialize-textarea">{{character.character_description}}</textarea>
 			<label for="">Character Description</label>
 		</div>
 	</div>
