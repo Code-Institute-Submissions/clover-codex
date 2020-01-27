@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<h2> Full character card </h2>
+
+<a href="{{url_for('characters_page')}}" class="waves-effect waves-light btn btn_small">Back to characters </a>
+
+{% for character in characters %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-4">
+			<img width="200px" height="200px" src="{{ character.img_src }}">
+       </div>
+			<div class="col-8">
+				<label>Character Name </label>
+				<h5 class="card-title">{{character.character_name}}</h5>
+				<label>Affinity name </label>
+				<h6>{{character.affinity_name}}</h6>
+				<label>Character age</label>
+				<h6 class="card-subtitle mb-2 text-muted">{{character.character_age}}</h6>
+				<label> Gender </label>
+				<h6 class="card-subtitle mb-2 text-muted">{{character.gender_name}}</h6>
+				<label> Status  </label>
+				<h6 class="card-subtitle mb-2 text-muted">{{character.status_name}}</h6>
+				<label>Species </label>
+				<h6 class="card-subtitle mb-2 text-muted">{{character.character_species}}</h6>
+                <label>Squad </label>
+				<h6 class="card-subtitle mb-2 text-muted">{{character.squad_name}}</h6>
+                <label> Country </label>
+				<h6 class="card-subtitle mb-2 text-muted">{{character.country_name}}</h6>
+				<label>Character description </label>
+				<h6 class="card-subtitle mb-2 text-muted">{{character.character_description}}</h6>
+			</div>
+			<div class="row">
+				<div class="col-6">
+					<a href="{{ url_for('delete_character' , character_id=character._id)}}"
+						class="waves-effect waves-light btn btn_small">Delete</a>
+				</div>
+				<div class="col-6">
+					<a href="{{url_for('edit_character' , character_id=character._id)}}"
+						class="waves-effect waves-light btn btn_small blue">Edit</a>
+				</div>
+			</div>
+
+		</div>
+
+
+
+		{% endfor %}
+
+	</div>
+
+
+	{% endblock %}

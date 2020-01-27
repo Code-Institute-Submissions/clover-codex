@@ -7,109 +7,26 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Bootstrap CSS -->
-	
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+	</script>
 
-	<link rel="stylesheet" href="{{url_for('static' , filename='css/main.css') }}">
-
-
+	<script type="text/javascript" src="../static/js/new.js">
+	</script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+	<link href="../static/css/main.css" rel="stylesheet" type="text/css">
 	<title>Clover kingdom codex</title>
-
-	<style>
-		body {
-			font-family: 'ZCOOL QingKe HuangYou', cursive;
-		}
-
-
-
-		/* nav code  */
-
-		#blackbulls-nav {
-			padding-bottom: 20px;
-			background-color: white;
-
-		}
-
-		#blackbulls-nav .navbar-brand {
-			font-weight: 950;
-			color: #000;
-		}
-
-		#blackbulls-nav .navbar-toggler {
-			font-size: 12px;
-			font-weight: 800;
-			padding: 13px;
-			text-transform: uppercase;
-			color: #000;
-		}
-
-		#blackbulls-nav .navbar-toggler,
-		.navbar-brand {
-			margin-top: 30px;
-			margin-bottom: 0;
-		}
-
-
-		#blackbulls-nav .navbar-nav>li.nav-item>a {
-			font-size: 12px;
-			font-weight: 800;
-			letter-spacing: 1px;
-			text-transform: uppercase;
-		}
-
-		#blackbulls-nav .navbar-nav>li.nav-item :hover {
-			background: #000;
-			color: #fff;
-			width: 100%;
-		}
-
-		/* Header code  */
-		.clover-title-heading {
-			width: 100%;
-			color: white;
-
-		}
-
-		.clover-title-heading h1,
-		.subheading {
-			font-size: 54px;
-			text-align: center;
-
-		}
-
-		.clover-title-heading .subheading {
-			font-size: 28px;
-			font-weight: 300;
-			line-height: 1.1;
-			display: block;
-			margin: 10px 0 0;
-		}
-
-
-
-		header.clover-display {
-			position: relative;
-			background: no-repeat center center;
-			background-color: #000;
-			background-size: cover;
-			background-attachment: scroll;
-			margin-bottom: 40px;
-			padding: 300px 0;
-		}
-
-		.clover-display .bg-shadow {
-			position: absolute;
-			top: 0;
-			left: 0;
-			height: 100%;
-			width: 100%;
-			background-color: rgb(1, 1, 1, 0.5)
-		}
-	</style>
-
 </head>
 
-<body onload="test()">
+<body >
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="blackbulls-nav">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="/static/index.html">Black Clover </a>
@@ -157,29 +74,9 @@
 
 	{% endblock %}
 
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
 	
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-<script type="text/javascript"  src="">
-$(document).ready(function(){
-$('select').material_select(); 
-});
-</script>
-<script>
-var previewImage = function(event) {
-    var preview = document.getElementById('preview');
-    preview.src = URL.createObjectURL(event.target.files[0]);
-      };
-function test(){
-    console.log(test);
-    };
 
-</script>
 
 </body>
 
