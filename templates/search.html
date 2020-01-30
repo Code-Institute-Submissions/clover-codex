@@ -1,0 +1,23 @@
+<div class="container">
+
+	<form  action="{{ url_for('search_results') }}" method="POST" >
+		<div class="row">
+			<div class="col-12">
+				<h1>Search!</h1>
+			</div>
+		</div>
+<div class="row">
+			<div class="col-12">
+				<input id="search_text" name="search_text" type="text">
+
+                <label for="search_text">
+                Enter Keyword 
+                </label>
+			</div>
+		</div>
+	</form>
+<<div class="row">
+			<button class="btn" type="submit" name="action">Search
+             </button>
+		</div>
+</div>
