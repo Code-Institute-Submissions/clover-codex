@@ -1,24 +1,22 @@
-<div class="container">
+<div class="container search-container">
 
-	<form  action="{{ url_for('search_results') }}" method="POST" >
+	<form action="{{ url_for('search_results') }}" method="POST">
 		<div class="row">
 			<div class="col-12">
-				<h1>Search!</h1>
-                
-			</div>
-		</div>
-<div class="row">
-			<div class="col-12">
-				<input id="search_text" name="search_text" type="text">
+				<h3>Search For Character</h3>
 
-                <label for="search_text">
-                Enter Keyword 
-                </label>
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-6">
+				<input class="form-control" id="search_text" name="search_text" type="text" >
+			</div>
+				<div class="col-6">
+					<button class="btn btn-dark" type="submit" name="action">Search</button>
+					<li class="btn btn-dark"><a href="{{url_for('add_characters')}}">Add Character</a></li>
+				</div>
+			</div>
+
+
 	</form>
-<<div class="row">
-			<button class="btn" type="submit" name="action">Search
-             </button>
-		</div>
 </div>

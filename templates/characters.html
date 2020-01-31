@@ -1,20 +1,20 @@
-{% extends 'base.html' %} {% block content %} <div class="container">
-	<div class="row">
-		<div class="col-12-">
-			<li><a href="{{url_for('add_characters')}}">Add Character</a></li>
-		</div>
-	</div>
-</div>
-<h1>characters</h1>
+{% extends 'base.html' %} {% block content %}
+<h2>Characters</h2>
 
-<div class="container">
- {% include 'search.html' %}
+
+ <div class="container">
+
+	<div class="row">
+		{% include 'search.html' %}
+	</div>
+
 </div>
+
 
 
 
 <div class="container ">
-    {% include 'character_card.html' %}
+	{% include 'character_card.html' %}
 </div>
 
 

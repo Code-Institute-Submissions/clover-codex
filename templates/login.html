@@ -19,11 +19,9 @@
    </div>
   <button value="Login" type="submit" class="btn btn-primary">Submit</button>
 </form>
- <ul class=flashes>
-    {% for message in messages %}
-      <li>{{ message }}</li>
-    {% endfor %}
-    </ul>
+{% if error  %}
+<p class=""><strong>error</strong>{{ error }} </p>
+{%  endif  %}
 </div>
 
 {%  endblock %}
