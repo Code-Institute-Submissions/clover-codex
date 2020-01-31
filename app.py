@@ -1,9 +1,10 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, request, session
+from flask import Flask, render_template, redirect, request, url_for, request, session, flash , abort
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from functools import wraps
 
- 
+
 from os import path
 if path.exists("env.py"):
     import env
@@ -11,17 +12,62 @@ if path.exists("env.py"):
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'clover_codex'
 app.config["MONGO_URI"] = os.getenv('MONGO_URI')
-
+app.secret_key = "plus_ultra" # put into env later
 mongo = PyMongo(app)
+
+# login required. This makes it so the user has to log in before accessing other pages. 
+# Got code from this/explaination from here:https://stackoverflow.com/questions/20503183/python-flask-working-with-wraps
+
+def login_required(test):
+    @wraps(test)
+    def wrap(*args, **kwargs):
+        if 'logged_in' in session:
+            return test(*args, **kwargs)
+        else:
+            flash('You will need to login first!')
+            return redirect(url_for('login'))
+    return wrap
+    
 
 
 @app.route('/')
+@app.route('/welcome')
+@login_required
+def welcome():
+    return render_template('welcome.html')
+
+
 @app.route('/home')
 def home_page():
     return render_template('home.html')
 
+# Enables user to log in and creates session. 
+# Got code and explaination from this video https://www.youtube.com/watch?v=bLA6eBGN-_0
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    error = None
+    if request.method == 'POST':
+        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+            error = 'Invalid Credentials. Please try again.'
+        else:
+            session['logged_in'] = True
+            flash('logged in :)')
+            return redirect(url_for('home_page'))
+    return render_template('login.html', error=error)
+
+# Enables user to logout and expires session.
+@app.route('/logout')
+def logout():
+    session.pop('logged_in', None)
+    flash('logged out :)') 
+    resp = app.make_response(render_template('welcome.html'))
+    resp.set_cookie('logged_in', expires=0)
+   
+    return resp
+
 
 @app.route('/characters')
+@login_required
 def characters_page():
     return render_template('characters.html', characters=mongo.db.characters.find())
 
@@ -79,24 +125,25 @@ def update_character(character_id):
     })
     return redirect(url_for('characters_page'))
 
-@app.route("/search_results/" , methods=["POST"])
-def search_results():
- search_text = request.form.get('search_text')
- mongo.db.characters.create_index([("character_name" ,"text"),
- ("character_description" ,"text")] )
- 
- return render_template("results.html", characters=mongo.db.characters.find({"$text": {"$search": search_text }}).limit(10) )
+
+@app.route("/search_results/", methods=["POST"])
+def search_results():  # received help from Micheal_ci with this part of code.
+    search_text = request.form.get('search_text')
+    mongo.db.characters.create_index([("character_name", "text"),
+                                      ("character_description", "text")])
+
+    return render_template("results.html", characters=mongo.db.characters.find({"$text": {"$search": search_text}}).limit(10))
+
 
 @app.route("/display_results")
 def display_results():
- return render_template("results.html" , characters=mongo.db.characters.find())
+    return render_template("results.html", characters=mongo.db.characters.find())
+
 
 @app.route('/delete_characters/<character_id>')
 def delete_character(character_id):
     mongo.db.characters.remove({'_id': ObjectId(character_id)})
     return redirect(url_for('characters_page'))
-    
-    
 
 
 if __name__ == "__main__":
