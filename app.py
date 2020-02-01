@@ -135,9 +135,6 @@ def search_results():  # received help from Micheal_ci with this part of code.
     return render_template("results.html", characters=mongo.db.characters.find({"$text": {"$search": search_text}}).limit(10))
 
 
-@app.route("/display_results")
-def display_results():
-    return render_template("results.html", characters=mongo.db.characters.find())
 
 
 @app.route('/delete_characters/<character_id>')

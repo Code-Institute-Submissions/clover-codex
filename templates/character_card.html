@@ -2,29 +2,27 @@
 
 <!--CHARACTERS CARDS-->
 
-
 <div class="row">
-{% for character in characters %}
-
-<div class="row">
-<div class="col-4"> 
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-  <img width="100px" height="100px" src="{{ character.img_src }}">
-
-    <h5 class="card-title">{{character.character_name}}</h5>
-     <h6>{{character.affinity_name}}</h6>
-    <h6 class="card-subtitle mb-2 text-muted">{{character.character_description}}</h6>
- <a href="{{url_for('full_page' , character_id=character._id)}}" class="card-link">full Card</a>
-    <a href="#" class="card-link">Another link</a>
-  
-
-   
-  </div>
-</div>
-</div>
 
 
-{% endfor %}
-</div>
 
+	{% for character in characters %}
+
+	<div class="col-4 outer-card">
+		<div class="card character-card">
+			<div class="card-body">
+				<div class="image-container">
+					<img class="character-image"  src="{{ character.img_src }}">
+				</div>
+					<h5 class="card-title">{{character.character_name}}</h5>
+					<h6>{{character.affinity_name}}</h6>
+					<a href="{{url_for('full_page' , character_id=character._id)}}" class="btn btn-dark">full Card</a>
+				</div>
+			</div>
+		</div>
+
+
+		{% endfor %}
+
+
+	</div>

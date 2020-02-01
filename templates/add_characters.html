@@ -4,13 +4,10 @@
 
 <form action="{{url_for( 'insert_character' )}}" method="POST" class="col-12" enctype="multipart/form-data">
 
-	<div class="row">
-		<input id="img_src" name="img_src" class="" type="url" minlength="20"
+	<div class="form-group">
+    	<label for="img_src">Character image </label>
+		<input id="img_src" name="img_src" class="form-control" type="url" minlength="20"
                     placeholder="character photo URL" pattern="https?://.+" autocomplete="on">
-		<label for="img_src">
-character image
-                        
-                </label>
 	</div>
 	</div>
 	<div class="form-group">
@@ -26,61 +23,61 @@ character image
                   {% endfor %}
                 </select>
 		</div>
-<div class="form-group">
-		<label for="">Character Age</label>
-		<input class="form-control" id="character_age" name="character_age" type="text" placeholder="Character age">
+		<div class="form-group">
+			<label for="">Character Age</label>
+			<input class="form-control" id="character_age" name="character_age" type="text" placeholder="Character age">
   </div>
-  <div class="form-group">
-			<label for="">Gender</label>
-			<select class="form-control" id="gender_name" name="gender_name">
+			<div class="form-group">
+				<label for="">Gender</label>
+				<select class="form-control" id="gender_name" name="gender_name">
                   <option value="" disabled selected>Select Gender</option>
                   {% for gender in gender %}
                       <option value="{{gender.gender_name}}">{{gender.gender_name}}</option>
                   {% endfor %}
                 </select>
-		</div>
- <div class="form-group">
-			<label for="">status</label>
-			<select class="form-control" id="status_name" name="status_name">
+			</div>
+			<div class="form-group">
+				<label for="">status</label>
+				<select class="form-control" id="status_name" name="status_name">
                   <option value="" disabled selected>Select Status</option>
                   {% for status in status %}
                       <option value="{{status.status_name}}">{{status.status_name}}</option>
                   {% endfor %}
                 </select>
-		</div>
-  <div class="form-group">
-		<label for="">Character Species</label>
-		<input class="form-control" id="character_species" name="character_species" type="text" placeholder="Character Species">
+			</div>
+			<div class="form-group">
+				<label for="">Character Species</label>
+				<input class="form-control" id="character_species" name="character_species" type="text" placeholder="Character Species">
   </div>
-   <div class="form-group">
-			<label for="">Squad</label>
-			<select class="form-control" id="squad_name" name="squad_name">
+				<div class="form-group">
+					<label for="">Squad</label>
+					<select class="form-control" id="squad_name" name="squad_name">
                   <option value="" disabled selected>Select Squad</option>
                   {% for squad in squad %}
                       <option value="{{squad.squad_name}}">{{squad.squad_name}}</option>
                   {% endfor %}
                 </select>
-		</div>
-  <div class="form-group">
-			<label for="">Country</label>
-			<select class="form-control" id="country_name" name="country_name">
+				</div>
+				<div class="form-group">
+					<label for="">Country</label>
+					<select class="form-control" id="country_name" name="country_name">
                   <option value="" disabled selected>Select country</option>
                   {% for country in country %}
                       <option value="{{country.country_name}}">{{country.country_name}}</option>
                   {% endfor %}
                 </select>
-		</div>
+				</div>
 
-		<div class="form-group">
-			<label for="">Character description</label>
-			<textarea name="character_description" id="character_description" class="form-control"></textarea>
-		</div>
+				<div class="form-group">
+					<label for="">Character description</label>
+					<textarea name="character_description" id="character_description" class="form-control"></textarea>
+				</div>
 
 
-		<div class="row">
-			<button class="btn" type="submit" name="action">Add Character
+				<div class="row">
+					<button class="btn btn-dark" type="submit" name="action">Add Character
              </button>
-		</div>
+				</div>
 
 </form>
 <script type="text/javascript" src="static/js/new.js">
