@@ -1,10 +1,11 @@
 {% extends 'base.html' %} {% block content %}
-<h3>Edit Character</h3>
+<h2>Edit Character</h2>
+<div class="container">
 
 <form action="{{url_for('update_character', character_id=character._id )}}" method="POST" class="col s12">
 	<div class="form-group">
     	<label for="img_src">Character image </label>
-		<input id="img_src" name="img_src" class="form-control" type="url" minlength="20"
+		<input  value="{{character.img_src}}" id="img_src" name="img_src" class="form-control" type="url" minlength="20"
                     placeholder="character photo URL" pattern="https?://.+" autocomplete="on">
 	</div>
 	<div class="form-group">
@@ -47,7 +48,7 @@
                   <option value="" disabled selected>Select Status</option>
                   {% for status in status %}
                    {% if status.status_name == character.status_name %}
-                      <option value="{{status.status_name}}" selected >{{status.status_name}}</option>
+					<option value="{{status.status_name}}" selected>{{status.status_name}}</option>
                   {% else %}
                    <option value="{{status.status_name}}" >{{status.status_name}}</option>
                   {% endif %}
@@ -94,12 +95,16 @@
 
 
 				<div class="row">
-					<button class="btn btn-dark" type="submit" name="action">Done
-                
-             </button>
+					<div class="col-12">
+                    <button class="btn btn-dark" type="submit" name="action">Done </button>
+             <a href="{{url_for('characters_page')}}" class="btn btn-dark">Back to characters </a>
+                    </div>
+
 				</div>
 
 </form>
+
+</div>
 
 
 {% endblock %}

@@ -24,7 +24,7 @@ def login_required(test):
         if 'logged_in' in session:
             return test(*args, **kwargs)
         else:
-            flash('You will need to login first!')
+            flash('You will need to login first. Hint: username = admin password = admin')
             return redirect(url_for('login'))
     return wrap
     
@@ -48,7 +48,7 @@ def login():
     error = None
     if request.method == 'POST':
         if request.form['username'] != 'admin' or request.form['password'] != 'admin':
-            error = 'Invalid Credentials. Please try again.'
+            error = ':  Invalid Credentials. Please try again. ( Hint : username = admin, password = admin. )'
         else:
             session['logged_in'] = True
             flash('logged in :)')
