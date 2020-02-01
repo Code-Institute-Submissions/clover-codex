@@ -1,21 +1,23 @@
 {% extends 'base.html' %} {% block content %}
-
-<div class="container">
-	<div class="row">
-<div class="col-12">
-<h1> welcome!! <h1> 
-</div>
-	</div>
-	<div class="row">
-<div class="col-12">
-<p>click<a href="/logout">here </a> to logout</p>
+<h2> Home <h2>
 
 
-</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="jumbotron">
+						<h1 class="display-4">Welcome to the Clover kingdom Codex!</h1>
+						<p class="lead">This is a simple app that uses Mongodb and Flask store details of a list of characters from the black clover
+							anime series</p>
+						<hr class="my-4">
+						<p>To start searching , adding, editing or deleting to the database click the link below! </p>
+						<a class="btn btn-dark btn-lg" href="/characters" role="button">Search/Add !</a>
+						<a class="btn btn-dark btn-lg" href="/logout"> Logout </a>
+					</div>
+				</div>
+			</div>
+		</div>
 
-	</div>
-</div>
 
 
-
-{% endblock %}
+		{% endblock %}

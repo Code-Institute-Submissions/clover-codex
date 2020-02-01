@@ -74,7 +74,7 @@ body {
 			background: no-repeat center center;
 			background-color: #000;
 			background-size: cover;
-			background-attachment: scroll;
+			background-attachment:fixed;
 			margin-bottom: 40px;
 			padding: 300px 0;
 		}

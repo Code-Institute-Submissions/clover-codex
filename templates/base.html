@@ -25,12 +25,38 @@
 	<link href="../static/css/main.css" rel="stylesheet" type="text/css">
 	<title>Clover kingdom codex</title>
 	<style>
-		/* Search container  */
+		.clover-bg{
+           background: repeat center center;
+			background-color: #000;
+			background-size: cover;
+			background-attachment:fixed;
+			margin-bottom: 0 ;
+			padding: 200px 0;
+        }
+        header.clover-display {
+			position: relative;
+			background: no-repeat center center;
+			background-color: #000;
+			background-size: cover;
+			background-attachment:fixed;
+			margin-bottom: 0;
+			padding: 400px 0;
+		}
+        
+        /* Search container  */
 
 		.search-container {
 			padding: 70px;
 
 		}
+        .user-search-info span{
+            display:;
+
+        }
+
+        h1, h2 , h3 {
+            color:#fff;
+        }
 
 		h2 {
 			margin-Left: 160px;
@@ -92,6 +118,13 @@ display:block;
 margin:0 auto 30px ;
 
         }
+         .jumbotron   {
+background-color:grey;
+        }
+
+       .jumbotron >h1 , p  {
+color:#fff;
+        }
 	</style>
 </head>
 
@@ -109,14 +142,9 @@ margin:0 auto 30px ;
 						<a class="nav-link" href="/home">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/about">About</a>
-					</li>
-					<li class="nav-item">
 						<a class="nav-link" href="/characters">Characters</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/contact">Contact</a>
-					</li>
+					
 				</ul>
 			</div>
 		</div>
@@ -138,12 +166,17 @@ margin:0 auto 30px ;
 	</header>
 
 
-	{% block content %}
+	<main class="clover-bg" style="background-image: url('https://fsa.zobj.net/crop.php?r=-Q1mwqvb26H9LDOhzqBKfRQF9NYZ_lEfnmdigPWE3Ho2THoLIdAyMDPikOHxQj2Tc1F1rriiUYXHSm1YakzrpFP2ojbQE2f1QF8azzLeRDNvOAV1MhXum8fbDNrLBa2LD-Q2h_m-xctC5o8bbbTbou_W0wORF00CXDnu1gnao3o9WXQa_RWn648EvVs')">
+>
+    {% block content %}
 
 
 
 	{% endblock %}
 
+    
+    
+    </main>
 	{% with messages = get_flashed_messages() %}
 	{% if messages %}
 	<ul class=flashes>
