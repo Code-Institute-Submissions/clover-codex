@@ -38,6 +38,7 @@ def welcome():
 
 
 @app.route('/home')
+@login_required
 def home_page():
     return render_template('home.html')
 
@@ -86,7 +87,7 @@ def full_page(character_id):
     return render_template('full_card.html', characters=the_characters, affinity=the_affinity)
 
 
-@app.route('/insert_character', methods=['POST'])
+@app.route('/insert_character', methods=['POST'])  
 def insert_character():
     characters = mongo.db.characters
     characters.insert_one(request.form.to_dict())

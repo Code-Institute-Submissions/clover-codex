@@ -1,0 +1,276 @@
+body {
+			font-family: 'ZCOOL QingKe HuangYou', cursive;
+		background-color: #000;
+			margin: 0;
+        }
+
+
+
+h1,
+		h2,
+		h3 {
+			color: #fff;
+
+		}
+
+		h5,
+		h6 {
+			font-size: 20px;
+		}
+
+h2 {
+			font-size: 54px;
+			margin: -150px 0 200px 160px;
+			font-weight: 300;
+		}
+
+
+
+label {
+			font-size: 25px;
+			text-decoration: underline #fff;
+            color:#fff;
+
+		}
+
+
+
+
+		/* nav code  */ 
+
+		#blackbulls-nav {
+			padding-bottom: 20px;
+			background-color: white;
+
+		}
+
+		#blackbulls-nav .navbar-brand {
+			font-weight: 950;
+			color: #000;
+		}
+
+		#blackbulls-nav .navbar-toggler {
+			font-size: 12px;
+			font-weight: 800;
+			padding: 13px;
+			text-transform: uppercase;
+			color: #000;
+		}
+
+		#blackbulls-nav .navbar-toggler,
+		.navbar-brand {
+			margin-top: 30px;
+			margin-bottom: 0;
+		}
+
+
+		#blackbulls-nav .navbar-nav>li.nav-item>a {
+			font-size: 12px;
+			font-weight: 800;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+		}
+
+		#blackbulls-nav .navbar-nav>li.nav-item :hover {
+			background: #000;
+			color: #fff;
+			width: 100%;
+		}
+
+		/* Header code  */
+		.clover-title-heading {
+			width: 100%;
+			color: white;
+
+		}
+
+		.clover-title-heading h1,
+		.subheading {
+			font-size: 70px;
+			text-align: center;
+            font-weight: 500;
+
+		}
+
+		.clover-title-heading .subheading {
+			font-size: 28px;
+			font-weight: 300;
+			line-height: 1.1;
+			display: block;
+			margin: 10px 0 0;
+		}
+
+
+
+		header.clover-display {
+			position: relative;
+			background: no-repeat center center;
+			background-color: #000;
+			background-size: cover;
+			background-attachment:fixed;
+			margin-bottom:0;
+			padding: 300px 0;
+		}
+
+		.clover-display .bg-shadow {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			background-color: rgb(1, 1, 1, 0.5)
+		}
+
+.clover-container {
+			padding-bottom:400px;
+		}
+      
+      .clover-bg {
+			background: repeat center center;
+			background-color: #000;
+			background-size: cover;
+			background-attachment: fixed;
+			margin-bottom: 0;
+			padding: 200px 0;
+		}
+
+/* Buttons */
+
+
+
+		.btn-dark,
+		.btn {
+			background-color: #000;
+
+		}
+
+		.btn-dark,
+		.btn>a {
+			color: #fff;
+
+		}
+
+		.btn-dark,
+		.btn>a:hover {
+			text-decoration: none;
+		}
+
+
+/* Search container  */
+
+		.search-container {
+			padding: 70px;
+
+		}
+
+
+
+        /* Character Card */
+
+		.outer-card {
+			margin-top: 10px;
+
+		}
+
+		.character-card {
+
+			width: 320px;
+			padding: 20px;
+			height: 350px;
+			margin:0 auto;
+			border: 6px solid grey;
+
+		}
+
+        
+		.image-container {
+			width: 100%;
+		}
+
+
+
+		.character-image {
+			width: 150px;
+			height: 150px;
+			display: block;
+			margin: 0 auto 30px;
+
+		}
+
+
+@media (min-width: 992px) {
+			.character-card {
+				margin: 10px 10px 20px 10px;
+				max-width: 270px;
+			}
+
+		}
+
+		@media (max-width: 320px) {
+            .character-card {
+			max-width: 270px;
+		}
+        }
+      
+
+
+    /* Full Character image */
+
+    .full-character-image{
+    display:block;
+    margin:0 auto;
+width:200px ;
+ height:200px;
+ border:#000 solid 4px;
+
+}
+
+.full-character-container {
+			background-color: #fff;
+
+		}
+
+
+	/* Media queries  Mobile View   */
+		@media (max-width: 990px) {
+			h2 {
+				margin-Left: 10px;
+				margin-bottom: 40px;
+				font-weight: 600;
+				-webkit-text-stroke-width: 0.1px;
+				-webkit-text-stroke-color: #000;
+			}
+
+			.search-container {
+				padding: 10px;
+
+			}
+label {
+-webkit-text-stroke-width: 0.9px;
+				-webkit-text-stroke-color: #000;
+}   
+
+		}
+
+		/*  Jumbotron   */
+
+        	.jumbotron {
+			background-color: grey;
+		}
+
+		.jumbotron > h1,
+		p {
+			color: #fff;
+		}
+
+/*  flash msgs  */
+
+.flashes {
+			font-family: cursive;
+			color: #fff;
+			font-size: 15px;
+			list-style: none;
+			display: block;
+            margin-right:40px;
+			padding-bottom: 50px;
+		}
