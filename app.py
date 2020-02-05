@@ -76,7 +76,7 @@ def characters_page():
 
 @app.route('/add_characters')
 def add_characters():
-    return render_template('add_characters.html', affinity=mongo.db.affinity.find(), squad=mongo.db.squad.find(), status=mongo.db.status.find(), gender=mongo.db.gender.find(), country=mongo.db.country.find())
+        return render_template('add_characters.html', affinity=mongo.db.affinity.find(), squad=mongo.db.squad.find(), status=mongo.db.status.find(), gender=mongo.db.gender.find(), country=mongo.db.country.find())
 
 
 @app.route('/full_card/<character_id>')

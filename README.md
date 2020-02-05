@@ -189,12 +189,16 @@ Characters page :
 
  Validation: 
 
- HTML - I used [W3.orgvalidator]( https://validator.w3.org/nu/) to validate my html, however because the validator can't read the jinja templating language it will come up with errors pertaining to the templating language syntax. 
+ HTML - I used [W3.orgvalidator](https://validator.w3.org/nu/) to validate my html, however because the validator can't read the jinja templating language it will come up with errors pertaining to the templating language syntax. 
 
  CSS - I used [W3CCSSvalidation](https://jigsaw.w3.org/css-validator) to validate my CSS "Congratulations! No Error Found.".
 
 Python - 
 
+```
+E501	91	80	line too long (121 > 79 characters)
+E501	118	80	line too long (174 > 79 characters)
+```
 Javascript - I used [Esprima](https://esprima.org/demo/validate.html) to validate my JS "Code is syntactically valid."
 
 
