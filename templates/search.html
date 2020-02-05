@@ -1,15 +1,15 @@
-<div class="container red search-container">
+<div class="container search-container">
 	<div class="jumbotron">
 		<form action="{{ url_for('search_results') }}" method="POST">
 			<div class="row">
 				<div class="col-12">
-					<h3>Search For Character | <div class="user-search-info">
-                    <span><small>(To search for a character enter a name e.g "Asta" or a word associated with the character description e.g "captain")</small> </span> </br>
-                    <span><small>(To Add a character click the "Add Character" button)</small> </span> </br>
-					<span><small>(if the search results come up with nothing hit the "Refresh" button to display cards again)</small> </span></br>
+					<h3>Search For Character | </h3> <div class="user-search-info">
+                    <span><small>(To search for a character enter a name e.g "Asta" or a word associated with the character description e.g "captain")</small> </span> <br>
+                    <span><small>(To Add a character click the "Add Character" button)</small> </span> <br>
+					<span><small>(if the search results come up with nothing hit the "Refresh" button to display cards again)</small> </span><br>
                     <span><small>(To edit or delete a card click "Full card" then click the specified buttons.)</small> </span>
 						</div>
-					</h3>
+					
 					<hr class="my-4">
 				</div>
 			</div>
@@ -19,8 +19,8 @@
 			</div>
 					<div class="col-12 mt-5 mt-lg-0 col-lg-6">
 						<button class="btn btn-dark" type="submit" name="action">Search</button>
-						<li class="btn btn-dark"><a href="{{url_for('add_characters')}}">Add Character</a></li>
-						<li class="btn btn-dark"><a href="{{url_for('characters_page')}}">Refresh</a></li>
+						<a class="btn btn-dark" href="{{url_for('add_characters')}}">Add Character</a>
+						<a  class="btn btn-dark" href="{{url_for('characters_page')}}">Refresh</a>
 					</div>
 				</div>
 

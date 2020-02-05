@@ -9,9 +9,9 @@ For my project i decided to create a character dictionary which contained info a
 
 #### User stories :
 
-A a user i would like to be able to login/logout.
+As a user i would like to be able to login/logout for security purposes.
 
-As a user I would to be able to search for Character definitions by typing into a search bar a name or a word associated with the character card. 
+As a user I would to be able to search for Character definitions by typing into a search bar a name or a word associated with the character card . 
 
 As a user I would like to be able to edit/update or delete information if it were to be incorrect or additonal info needed to be added. 
 
@@ -138,13 +138,69 @@ Flask
 
 # TESTING 
 
-* User testing:
+#### User testing: 
 
-* Manual testing:
+As a user I would like to be able to login/logout for security purposes. My project does this as it has a login page furthermore if a user tries to click on e.g "characters" link in the nav bar they will be redirected to the login page to login.
 
-* Validation:
+As a user I would to be able to search for Character definitions by typing into a search bar a name or a word associated with the character card. When the user types in a word e.g "captain" it will filter the list of cards will a set of cards associated with that word or name. 
+
+As a user I would like to be able to edit/update or delete information if it were to be incorrect or additonal info needed to be added. when you click on "full character card" on a card in the characters page you are taken to a seperate page that reveals more information on the character card if you click the edit button you are taken to a form that will display all the previous inputs moreover if you change and input e.g the name and click the "done" button then this will update the database and the card furthermore on the full characters card if you click the "delete" button this will remove the card from the app and database.   
+
+As user I would like to be able, to create new Character cards and definitions. On the characters page when you click the "add characters" button you are taken to a form with empty inputs. When you fill in those inputs and click "done" this will create a new character card into the database. 
+
+As a user i would like to easily navigate through the site. My site contains a simple responsive Nav bar with two links moreover on the home page and welcome page theres are call to action links that directs the user to the characters page and login page. 
+
+
+#### Manual testing: 
+
+Login required function: 
+
+* When on the welcome page try to click on the "characters" link in the navbar user will be redirected to the login page. A flash message will notify the user at the bottom of the page that a login is required. 
+for testing purposes the username and password is specified in the flash message.
+
+* Type in the wrong credentials into the form, the user will be redirected to the login page again and a flash message will notify the user that they've entered wrong credentials. 
+
+Navigation bar : 
+
+* When logged in click the Nav links and see if they take you to the respective pages. 
+* When the Navigation bar is collapsed click the menu button to see if a dropdown menu is displayed.   
+
+Welcome page : 
+
+* click the link in the jumbotron and see of it takes you to the login page. 
+
+Homepage : 
+
+* click the link in the jumbotron and see if it takes you to the characters page. 
+
+Characters page : 
+
+* Type in a character name into the search bar, click the "Search button" and see if the specifed character comes up. Type in a word associated with character description and see what characters with that specified word in there character description comes up e.g "black bulls ". 
+* type in a character name to filter out the rest of the cards and then click the "refresh button" to see if all other cards reappear. 
+* click  "add character button" to see if you are redirected to a new page with an empty form. type in some/select values into these form inputs find an image url to put in the url input. CLick "add character" check to see if youo are redirected to "character page " and also Check to see if your newly created card is displayed with the rest on the page.
+* click "edit" on the full characters card see if you are redirected to a form that displays the inputs from the selected character card. Change an input e.g the character name or age then click "done" to see if the changes take effect. 
+* On the add characters page and edit characters page click the "Back to characters page" to see if you are returned to the " characters page " 
+ character. 
+* when on full character card, do this test for "edit" and "add character". Delete the following inputs : Character name, img url and character description. see if a message pops up saying "field required". Next input text into two of the listed inputs leaving one empty then try to submit form and see if a message pops up do this for each of the listed inputs. 
+* On a card in the characters page click on " full card" to see if you are taken to a full page with more information about that card. 
+* On the "Full characters page" click the "delete" button to see if hte character card is removed from the database.
+* Start at the top of the page, keep scrolling down till you see the back to top button appear. Click that button to see if it takes you to the top of the page. 
+
+
+ Validation: 
+
+ HTML - I used [W3.orgvalidator]( https://validator.w3.org/nu/) to validate my html, however because the validator can't read the jinja templating language it will come up with errors pertaining to the templating language syntax. 
+
+ CSS - I used [W3CCSSvalidation](https://jigsaw.w3.org/css-validator) to validate my CSS "Congratulations! No Error Found.".
+
+Python - 
+
+Javascript - I used [Esprima](https://esprima.org/demo/validate.html) to validate my JS "Code is syntactically valid."
+
 
 * Issues:
+
+I found when testing the search bar that it could be improved alot by adding different search inputs for example atm mine is only a "text search input" so it only searches the database for text however i think adding a catagory search would make the search bar more user friendly and efficient e.g one of the inputs on the character card is "squad" the user can select from a list of inputs, in light of this is i think adding a tick box that enables the user to select a card with this catagory would be the next step.  
 
 
 # DEPLOYMENT

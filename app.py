@@ -12,7 +12,8 @@ if path.exists("env.py"):
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'clover_codex'
 app.config["MONGO_URI"] = os.getenv('MONGO_URI')
-app.secret_key = "plus_ultra" # put into env later
+app.config["SECRET_KEY"] = os.getenv('SECRET_KEY')
+ 
 mongo = PyMongo(app)
 
 # login required. This makes it so the user has to log in before accessing other pages. 
@@ -78,13 +79,12 @@ def add_characters():
     return render_template('add_characters.html', affinity=mongo.db.affinity.find(), squad=mongo.db.squad.find(), status=mongo.db.status.find(), gender=mongo.db.gender.find(), country=mongo.db.country.find())
 
 
-@app.route('/full_card/<character_id>')
+@app.route('/full_card/<character_id>')  
 def full_page(character_id):
     the_characters = mongo.db.characters.find_one(
-        {"_id": ObjectId(character_id)}),
-    character_name: request.form.getValues('character_name')
-    the_affinity = affinity = mongo.db.affinity.find()
-    return render_template('full_card.html', characters=the_characters, affinity=the_affinity)
+        {"_id": ObjectId(character_id)})
+    
+    return render_template('full_card.html', character=the_characters)
 
 
 @app.route('/insert_character', methods=['POST'])  
