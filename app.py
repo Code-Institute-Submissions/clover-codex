@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, request, session, flash , abort
+from flask import Flask, render_template, redirect, request, url_for, request, session, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from functools import wraps
@@ -13,11 +13,12 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'clover_codex'
 app.config["MONGO_URI"] = os.getenv('MONGO_URI')
 app.config["SECRET_KEY"] = os.getenv('SECRET_KEY')
- 
+
 mongo = PyMongo(app)
 
-# login required. This makes it so the user has to log in before accessing other pages. 
+# login required. This makes it so the user has to log in before accessing other pages.
 # Got code from this/explaination from here:https://stackoverflow.com/questions/20503183/python-flask-working-with-wraps
+
 
 def login_required(test):
     @wraps(test)
@@ -28,7 +29,6 @@ def login_required(test):
             flash('You will need to login first. Hint: username = admin password = admin')
             return redirect(url_for('login'))
     return wrap
-    
 
 
 @app.route('/')
@@ -43,7 +43,7 @@ def welcome():
 def home_page():
     return render_template('home.html')
 
-# Enables user to log in and creates session. 
+# Enables user to log in and creates session.
 # Got code and explaination from this video https://www.youtube.com/watch?v=bLA6eBGN-_0
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -61,10 +61,10 @@ def login():
 @app.route('/logout')
 def logout():
     session.pop('logged_in', None)
-    flash('logged out :)') 
+    flash('logged out :)')
     resp = app.make_response(render_template('welcome.html'))
     resp.set_cookie('logged_in', expires=0)
-   
+
     return resp
 
 
@@ -79,15 +79,15 @@ def add_characters():
     return render_template('add_characters.html', affinity=mongo.db.affinity.find(), squad=mongo.db.squad.find(), status=mongo.db.status.find(), gender=mongo.db.gender.find(), country=mongo.db.country.find())
 
 
-@app.route('/full_card/<character_id>')  
+@app.route('/full_card/<character_id>')
 def full_page(character_id):
     the_characters = mongo.db.characters.find_one(
         {"_id": ObjectId(character_id)})
-    
+
     return render_template('full_card.html', character=the_characters)
 
 
-@app.route('/insert_character', methods=['POST'])  
+@app.route('/insert_character', methods=['POST'])
 def insert_character():
     characters = mongo.db.characters
     characters.insert_one(request.form.to_dict())
@@ -134,8 +134,6 @@ def search_results():  # received help from Micheal_ci with this part of code.
                                       ("character_description", "text")])
 
     return render_template("results.html", characters=mongo.db.characters.find({"$text": {"$search": search_text}}).limit(10))
-
-
 
 
 @app.route('/delete_characters/<character_id>')
