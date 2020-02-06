@@ -24,12 +24,14 @@ As a user i would like to easily navigate through the site.
 
 I hand drew my wireframes and linked them below:
 
-* [Homepage/welcome-page](https://www.google.com)
-* [Character-page](https://www.google.com)
-*  [Full-character-card](https://www.google.com)
-* [Add/Edit](https://www.google.com)
-* [Login-page](https://www.google.com)
-
+* [Homepage/welcome-page](https://github.com/xxkaminaxx/milestone-3-anime-dictionary-/blob/master/wireframes/Home%26welcome.jpg)
+* [Character-page](https://github.com/xxkaminaxx/milestone-3-anime-dictionary-/blob/master/wireframes/character.jpg)
+* [character-page-scrolled-view](https://github.com/xxkaminaxx/milestone-3-anime-dictionary-/blob/master/wireframes/scrolled%20view%20of%20character%20page%20.jpg)
+* [character-card/Full-character-card](https://github.com/xxkaminaxx/milestone-3-anime-dictionary-/blob/master/wireframes/Character-card-full-character-card-designs.jpg)
+* [Add/Edit](https://github.com/xxkaminaxx/milestone-3-anime-dictionary-/blob/master/wireframes/add-character%26edit-character.jpg)
+* [Login-page](https://github.com/xxkaminaxx/milestone-3-anime-dictionary-/blob/master/wireframes/login.jpg)
+* [Base-template](https://github.com/xxkaminaxx/milestone-3-anime-dictionary-/blob/master/wireframes/base-template.jpg)
+* [Base-template-mobile-view](https://github.com/xxkaminaxx/milestone-3-anime-dictionary-/blob/master/wireframes/base-mobileview.jpg)
 
 # Features
 
