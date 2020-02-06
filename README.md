@@ -1,4 +1,4 @@
-# Milestone 3 : Black clover codex
+# Milestone 3 : clover kingdom  codex
 
 Overview:
  
@@ -214,6 +214,39 @@ I found when testing the search bar that it could be improved alot by adding dif
 I used Heroku, 
 
 # CREDITS
+
+ #### Code: 
+ 
+  I got my login function code and explaination from this video.
+ https://www.youtube.com/watch?v=bLA6eBGN-_0
+ ```
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    error = None
+    if request.method == 'POST':
+        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+            error = ':  Invalid Credentials. Please try again. ( Hint : username = admin, password = admin. )'
+        else:
+            session['logged_in'] = True
+            flash('logged in :)')
+            return redirect(url_for('home_page'))
+    return render_template('login.html', error=error)
+
+```
+I got my logout function code explaination from this video. 
+https://www.youtube.com/watch?v=BnBjhmspw4c
+
+```
+@app.route('/logout')
+def logout():
+    session.pop('logged_in', None)
+    flash('logged out :)')
+    resp = app.make_response(render_template('welcome.html'))
+    resp.set_cookie('logged_in', expires=0)
+
+    return resp
+
+```
 
 
 #### Content : 
