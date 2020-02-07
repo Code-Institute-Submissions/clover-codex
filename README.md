@@ -155,7 +155,17 @@ As a user i would like to easily navigate through the site. My site contains a s
 
 #### Manual testing: 
 
-Login required function: 
+ login feature: 
+
+When testing login feature or viewing page I used these credentials to access page.
+
+* Username : admin
+
+
+* password : admin
+
+
+ Login required function: 
 
 * When on the welcome page try to click on the "characters" link in the navbar user will be redirected to the login page. A flash message will notify the user at the bottom of the page that a login is required. 
 for testing purposes the username and password is specified in the flash message.
@@ -195,12 +205,8 @@ Characters page :
 
  CSS - I used [W3CCSSvalidation](https://jigsaw.w3.org/css-validator) to validate my CSS "Congratulations! No Error Found.".
 
-Python - 
+Python - I used [PEP8validator](http://pep8online.com/) to validate my python code. 
 
-```
-E501	91	80	line too long (121 > 79 characters)
-E501	118	80	line too long (174 > 79 characters)
-```
 Javascript - I used [Esprima](https://esprima.org/demo/validate.html) to validate my JS "Code is syntactically valid."
 
 
@@ -224,14 +230,14 @@ I used Heroku,
 def login():
     error = None
     if request.method == 'POST':
-        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
-            error = ':  Invalid Credentials. Please try again. ( Hint : username = admin, password = admin. )'
+        if request.form['username'] != 'admin'\
+           or request.form['password'] != 'admin':
+            error = ':  Invalid Credentials. Please try again.'
         else:
             session['logged_in'] = True
             flash('logged in :)')
             return redirect(url_for('home_page'))
     return render_template('login.html', error=error)
-
 ```
 I got my logout function code explaination from this video. 
 https://www.youtube.com/watch?v=BnBjhmspw4c
