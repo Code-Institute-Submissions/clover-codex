@@ -82,7 +82,7 @@ def characters_page():
     return render_template('characters.html',
                            characters=mongo.db.characters.find())
 
-
+@login_required
 @app.route('/add_characters')
 def add_characters():
         return render_template('add_characters.html',
@@ -160,6 +160,6 @@ def delete_character(character_id):
 
 
 if __name__ == "__main__":
-    app.run(host=os.environ.get('IP'),
-            port=int(os.environ.get('PORT')),
+    app.run(host=os.environ.get('IP' , '0.0.0.0'),
+            port=int(os.environ.get('PORT', '8080' )),
             debug=True)
