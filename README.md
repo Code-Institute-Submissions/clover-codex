@@ -217,7 +217,34 @@ I found when testing the search bar that it could be improved alot by adding dif
 
 # DEPLOYMENT
 
-I used Heroku, 
+#### local deployment: 
+
+* Go to my github repository [here](https://github.com/xxkaminaxx/milestone-3-anime-dictionary-)
+* click "clone and download" and then copy the url . 
+* Open up your own IDE ( I used gitpod ) 
+* Within the terminal type "git clone" then hit space bar and paste the url next it. 
+* Hit enter then the file should be loaded and displayed 
+* you'll need to create a env.py file this will contain the mongo db url and secret key however I have provided necessary code for this to save time.  
+```
+Copy and paste this into env.py file then save. 
+
+import os 
+os.environ["MONGO_URI"] = "mongodb+srv://admin:Password1@myfirstcluster-qjzok.mongodb.net/clover_codex?retryWrites=true&w=majority"
+os.environ["SECRET_KEY"] = "PLUS_ULTRA"
+```
+* To run file use command  " python3 app.py " 
+* You may need to navigate to the correct directory. So use the "cd " command example : cd < path to folder >
+
+#### Heroku 
+
+To deploy project to heroku the following steps were taken: 
+
+* I created a requirments.txt file so heroku can . I used this command pip3 freeze --local > requirements.txt
+
+* I created a procfile. This will tell heroku what kind of application is being deployed and how to run it. 
+
+* Create an account on heroku. create app. Connect to github search for repository. 
+
 
 # CREDITS
 
