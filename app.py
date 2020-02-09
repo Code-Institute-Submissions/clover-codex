@@ -5,7 +5,7 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from functools import wraps
 
-m
+
 from os import path
 if path.exists("env.py"):
     import env 
