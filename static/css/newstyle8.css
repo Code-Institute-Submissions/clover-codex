@@ -31,11 +31,33 @@ label {
 			font-size: 25px;
 			text-decoration: underline #fff;
             color:#fff;
+            -webkit-text-stroke-width: 0.9px;
+			-webkit-text-stroke-color: #000;
+           
+		}
 
+/* Black outline */
+
+.black-outline h1 {
+		
+            -webkit-text-stroke-width: 2.9px;
+			-webkit-text-stroke-color: #000;
 		}
 
 
+        .black-outline h2 {
+		
+            -webkit-text-stroke-width: 0.1px;
+			-webkit-text-stroke-color: #000;
+		}
 
+         .black-outline h3 {
+		
+            -webkit-text-stroke-width: 1.9px;
+			-webkit-text-stroke-color: #000;
+		}
+
+      
 
 		/* nav code  */ 
 
@@ -85,20 +107,23 @@ label {
 
 		}
 
-		.clover-title-heading h1,
-		.subheading {
+		.clover-title-heading h1
+		 {
 			font-size: 70px;
 			text-align: center;
             font-weight: 500;
+            text-decoration: underline #000;
 
 		}
 
-		.clover-title-heading .subheading {
-			font-size: 28px;
+		.clover-title-heading h3 {
+			font-size: 48px;
 			font-weight: 300;
+            text-align: center;
 			line-height: 1.1;
 			display: block;
 			margin: 10px 0 0;
+            text-decoration: underline #000;
 		}
 
 
@@ -236,24 +261,20 @@ width:200px ;
 		}
 
 
-	/* Media queries  Mobile View   */
+	/* Media queries here ensure better visibilty of the page titles on mobile view and tablet view */
 		@media (max-width: 990px) {
 			h2 {
 				margin-Left: 10px;
 				margin-bottom: 40px;
 				font-weight: 600;
-				-webkit-text-stroke-width: 0.1px;
-				-webkit-text-stroke-color: #000;
+				
 			}
 
 			.search-container {
 				padding: 10px;
 
 			}
-label {
--webkit-text-stroke-width: 0.9px;
-				-webkit-text-stroke-color: #000;
-}   
+
 
 		}
 
