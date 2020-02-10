@@ -1,4 +1,6 @@
-# Milestone 3 : clover kingdom  codex
+# Milestone 3 : Clover codex
+
+link to site here: [Clover codex](http://clover-codex2.herokuapp.com/login)
 
 Overview:
  
@@ -243,8 +245,19 @@ To deploy project to heroku the following steps were taken:
 
 * I created a procfile. This will tell heroku what kind of application is being deployed and how to run it. 
 
-* Create an account on heroku. create app. Connect to github search for repository. 
+* I Created an account on heroku. create app. Then click on the Deploy tab and under "Deployment method" click "connect to github" search for repository.
+* Then enable automatic deployment. 
 
+* Scroll up to settings and click "reveal config vars" and enter the following : 
+```
+* IP - 0.0.0.0
+* PORT - 8080
+* MONGO_URI - mongodb+srv://admin:Password1@myfirstcluster-qjzok.mongodb.net/clover_codex?retryWrites=true&w=majority
+* SECRET_KEY - PLUS_ULTRA
+
+```
+* Click "open app" App should be Sucessfully deployed. 
+* In the event app isn't deployed go back to "Deploy" and scroll to the manual deploy section and click "Deploy branch"
 
 # CREDITS
 
