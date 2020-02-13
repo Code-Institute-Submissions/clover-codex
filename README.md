@@ -142,7 +142,7 @@ Flask
 
 # Testing
 
-click [here]() for testing 
+click [here](https://github.com/xxkaminaxx/clover-codex/blob/master/TESTING.md) for testing 
 
 
 # DEPLOYMENT
