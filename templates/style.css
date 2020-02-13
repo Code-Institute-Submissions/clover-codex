@@ -100,6 +100,28 @@ label {
 			width: 100%;
 		}
 
+     /* Backgrounds  */ 
+
+ header.black-clover-bg{
+background:url('../images/black-clover-bg.jpg') no-repeat fixed center ;
+background-size:cover;
+-webkit-background-size:cover ;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     } 
+
+main.white-clover-bg{
+background:url('../images/white-clover-bg.jpg') no-repeat fixed center  ;
+background-size:cover;
+-webkit-background-size:cover ;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    padding: 300px 0 440px;
+		
+}
+
+
+
 		/* Header code  */
 		.clover-title-heading {
 			width: 100%;
@@ -128,16 +150,11 @@ label {
 
 
 
-		header.clover-display {
+		 header.clover-display {
 			position: relative;
-			background: no-repeat center center;
-			background-color: #000;
-			background-size: cover;
-			background-attachment:fixed;
 			margin-bottom:0;
 			padding: 300px 0 440px;
 		}
-
 		.clover-display .bg-shadow {
 			position: absolute;
 			top: 0;
