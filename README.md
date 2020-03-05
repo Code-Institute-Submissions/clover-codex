@@ -249,6 +249,9 @@ Login code :
 
 * I used this page from [Stacks-overflow](https://stackoverflow.com/questions/20503183/python-flask-working-with-wraps) to implemtent the login required feature.
 * I used this video to [create the login page with view functions in flask](https://www.youtube.com/watch?v=bLA6eBGN-_0) for my app.
+Back to top button: 
+
+* I reused the back to top button from my milestone 1 heres the original [link](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)
 
 #### Acknowledgements : 
 
